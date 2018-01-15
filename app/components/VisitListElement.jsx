@@ -1,4 +1,5 @@
 import React from 'react';
+import {ListGroup,ListGroupItem} from 'react-bootstrap';
 export default class VisitListElement extends React.Component{
     
     handleClick(){
@@ -7,20 +8,20 @@ export default class VisitListElement extends React.Component{
        
     }
     render(){
-        console.log("elements")
+        
         return(
-            <ul onClick={this.handleClick.bind(this)} onMouseOver="" style={{cursor:'pointer'}}>
+            <ListGroup onClick={this.handleClick.bind(this)} onMouseOver="" style={{cursor:'pointer',padding:"0",}}>
                 {
-                 <li style={{borderBottom : "1px solid", listStyle:"none"}} key={this.props.i*5} >
+                 <ListGroupItem  key={this.props.i*5} >
                     Nombre vendedor: {this.props.visit.Salesman.fullname}
-                </li>
+                </ListGroupItem>
                 }   
                 {
-                <li style={{listStyle:"none"}} key={this.props.i*5+1}>
+                <ListGroupItem  key={this.props.i*5+1}>
                     Nombre cliente: {this.props.visit.Customer.name}
-                </li>
+                </ListGroupItem>
                 }
-           </ul>
+           </ListGroup>
         )
     }
 }
